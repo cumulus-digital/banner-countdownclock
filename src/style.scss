@@ -3,6 +3,7 @@ countdown-banner {
 	align-items: center;
 	justify-content: center;
 	font-family: var(--font-family, sans-serif);
+	pointer-events: none;
 
 	&,
 	& * {
@@ -17,12 +18,20 @@ countdown-banner {
 	display: flex;
 	align-items: var(--clock-align, center);
 	justify-content: var(--clock-justify, center);
-	font-size: var(--clock-fontsize, 55px);
 	gap: var(--clock-digit-gap, 0.1em);
+	font-size: var(--clock-fontsize, 55px);
+	line-height: 1;
+	text-align: center;
 	margin: var(--clock-margin, 0.5em 0 0);
+	padding: 0.5em;
 	color: var(--clock-color, rgba(255, 255, 255, 1));
 
-	> i {
+	.end-message {
+		color: var(--end-message-color, inherit);
+		font-size: var(--end-message-font-size, 1em);
+	}
+
+	> i.s {
 		align-self: center;
 		display: block;
 		font-style: normal;

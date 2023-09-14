@@ -52,6 +52,10 @@ class CountdownBanner extends HTMLElement {
 			'--clock-color': this.getAttribute('clock-color') || '#fff',
 			'--clock-digit-gap':
 				this.getAttribute('clock-digit-gap') || '0.1em',
+			'--end-message-font-size':
+				this.getAttribute('end-message-font-size') || '1em',
+			'--end-message-color':
+				this.getAttribute('end-message-color') || 'inherit',
 		};
 		for (let k in baseStyle) {
 			this.style.setProperty(k, baseStyle[k]);
@@ -130,6 +134,7 @@ class CountdownBanner extends HTMLElement {
 			this.secondsEl.className = 'digit seconds';
 
 			let separator = document.createElement('i');
+			separator.className = 's';
 			separator.innerHTML = this.getAttribute('clock-separator') || '';
 
 			this.clockEl.append(
@@ -154,17 +159,64 @@ class CountdownBanner extends HTMLElement {
 		const _hour = _minute * 60;
 		const _day = _hour * 24;
 
+		const updateDisplay = (time) => {
+			const timeParts = ['days', 'hours', 'minutes', 'seconds'];
+			timeParts.forEach((t) => {
+				let l = t.charAt(0).toUpperCase() + t.substring(1);
+				if (time[t] > 1) {
+					this[`${t}El`].classList.add('plural');
+				} else {
+					this[`${t}El`].classList.remove('plural');
+				}
+				if (this.show2Digits && time[t] < 10) {
+					time[t] = `0${time[t]}`;
+				}
+
+				this[`${t}El`].innerHTML = `
+					<time>
+						${time[t]}
+						${this.showLabels ? `<span>${l}</span>` : ''}
+					</time>
+				`;
+			});
+
+			if (!this.showDays) {
+				this.daysEl.style.setProperty('display', 'none');
+				this.daysEl.nextElementSibling.style.setProperty(
+					'display',
+					'none'
+				);
+			}
+			if (!this.showSeconds) {
+				this.secondsEl.style.setProperty('display', 'none');
+				this.minutesEl.nextElementSibling.style.setProperty(
+					'display',
+					'none'
+				);
+			}
+		};
+
 		var distance = this.endDate - this.now;
 		if (distance < 0) {
 			clearInterval(this.clockInterval);
 			this.clockInterval = null;
-			if (this.hasAttribute('end-message')) {
-				this.clockEl.innerHTML = this.getAttribute('end-message');
+			const endMessage = this.getAttribute('end-message') || null;
+			if (endMessage?.length) {
+				const endMessageEl = document.createElement('div');
+				endMessageEl.className = 'end-message';
+				endMessageEl.innerHTML = endMessage;
+				this.clockEl.replaceChildren(endMessageEl);
+			} else {
+				updateDisplay({
+					days: 0,
+					hours: 0,
+					minutes: 0,
+					seconds: 0,
+				});
 			}
 			return;
 		}
 
-		const timeParts = ['days', 'hours', 'minutes', 'seconds'];
 		const time = {
 			days: Math.floor(distance / _day),
 			hours: this.showDays
@@ -174,36 +226,7 @@ class CountdownBanner extends HTMLElement {
 			seconds: Math.floor((distance % _minute) / _second),
 		};
 
-		timeParts.forEach((t) => {
-			let l = t.charAt(0).toUpperCase() + t.substring(1);
-			if (time[t] > 1) {
-				this[`${t}El`].classList.add('plural');
-			} else {
-				this[`${t}El`].classList.remove('plural');
-			}
-			if (this.show2Digits && time[t] < 10) {
-				time[t] = `0${time[t]}`;
-			}
-
-			this[`${t}El`].innerHTML = `
-				<time>
-					${time[t]}
-					${this.showLabels ? `<span>${l}</span>` : ''}
-				</time>
-			`;
-		});
-
-		if (!this.showDays) {
-			this.daysEl.style.setProperty('display', 'none');
-			this.daysEl.nextElementSibling.style.setProperty('display', 'none');
-		}
-		if (!this.showSeconds) {
-			this.secondsEl.style.setProperty('display', 'none');
-			this.minutesEl.nextElementSibling.style.setProperty(
-				'display',
-				'none'
-			);
-		}
+		updateDisplay(time);
 	}
 }
 customElements.define('countdown-banner', CountdownBanner);

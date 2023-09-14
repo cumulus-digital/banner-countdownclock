@@ -179,7 +179,7 @@ module.exports = (env) => {
 				},
 			}),
 		],
-		devtool: 'source-map',
+		//devtool: 'source-map',
 		devServer: {
 			// Serve index.html as the base
 			static: resolveAppPath('./'),
