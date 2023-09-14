@@ -14,6 +14,12 @@ When countdown completes, an `end-message` may be shown. Omit or leave blank to 
 
 ## Attributes
 
+Defaults in parenthesis.
+
+* `width` (300px)
+  Width of the banner.
+* `height` (250px)
+  Height of the banner.
 * `background-color` (transparent)
   Background color of the clock.
 * `background-image` ()
