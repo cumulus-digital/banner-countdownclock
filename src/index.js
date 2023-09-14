@@ -1,5 +1,3 @@
-import { zonedTimeToUtc, utcToZonedTime, format, parse } from 'date-fns';
-
 const globalStyle = require('!!raw-loader!sass-loader!./style.scss').default;
 
 class CountdownBanner extends HTMLElement {

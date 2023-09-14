@@ -116,9 +116,6 @@ module.exports = (env) => {
 							babelrc: true,
 							configFile: true,
 							presets: [
-								'@babel/preset-react',
-								'@babel/preset-env',
-								/*
 								[
 									'@babel/preset-env',
 									{
@@ -127,17 +124,6 @@ module.exports = (env) => {
 										useBuiltIns: 'usage',
 										corejs: require('core-js/package.json')
 											.version,
-									},
-								],
-								*/
-							],
-							plugins: [
-								['@babel/plugin-transform-runtime'],
-								[
-									'@babel/plugin-transform-react-jsx',
-									{
-										pragma: 'h',
-										pragmaFrag: 'Fragment',
 									},
 								],
 							],
