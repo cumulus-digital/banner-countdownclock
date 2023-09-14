@@ -1,6 +1,6 @@
 # Countdown Clock Banner
 
-See `example.html` for implementation. It includes a script tag loading `dist/banner.js` from jsdelivr. To include a specific release of `banner-countdownclock`, alter the version number after the `@` symbol in the jsdelivr URL.
+See `example.html` for implementation. It includes a script tag loading `dist/banner.js` from jsdelivr referencing a release version of this code. To choose a different version, alter the version number after the `@` symbol in the jsdelivr URL. See [jsdelivr documentation](https://www.jsdelivr.com/documentation#id-github) for details.
 
 All attributes of the `countdown-banner` element are optional. The example includes the default value of all attributes.
 
