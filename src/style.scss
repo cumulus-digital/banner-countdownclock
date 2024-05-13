@@ -20,8 +20,9 @@ countdown-banner {
 	justify-content: var(--clock-justify, center);
 	gap: var(--clock-digit-gap, 0.1em);
 	font-size: var(--clock-fontsize, 55px);
-	line-height: 1;
+	line-height: var(--clock-lineheight, 1);
 	text-align: center;
+	font-variant-numeric: var(--clock-font-variant-numeric, tabular-nums);
 	margin: var(--clock-margin, 0.5em 0 0);
 	padding: 0.5em;
 	color: var(--clock-color, rgba(255, 255, 255, 1));
@@ -53,7 +54,7 @@ countdown-banner {
 			flex-direction: column;
 			font-weight: var(--clock-weight, bold);
 			text-align: center;
-			width: var(--digit-width, 2.1ch);
+			//width: var(--digit-width, 2.1ch);
 
 			span {
 				position: absolute;

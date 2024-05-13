@@ -44,6 +44,11 @@ class CountdownBanner extends HTMLElement {
 			height: this.getAttribute('height') || '250px',
 			'--font-family': this.getAttribute('font-family') || 'sans-serif',
 			'--clock-fontsize': this.getAttribute('clock-fontsize', '55px'),
+			'--clock-lineheight': this.getAttribute('clock-lineheight', '1'),
+			'--clock-font-variant-numeric': this.getAttribute(
+				'clock-font-variant-numeric',
+				'tabular-nums'
+			),
 			'--clock-align': this.getAttribute('clock-align', 'center'),
 			'--clock-justify': this.getAttribute('clock-justify', 'center'),
 			'--clock-margin': this.getAttribute('clock-margin') || '.5em 0 0',

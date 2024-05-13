@@ -6,7 +6,7 @@ All attributes of the `countdown-banner` element are optional except for `end`. 
 
 The `end` attribute specifies the end date and time of the countdown clock and must be specified in a format readable by JavaScript's `Date.parse()` — the most compatible of which is [ISO 8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format). Check out [time.lol](https://time.lol/) for an easy conversion tool.
 
-Your click-through is the A tag wrapping the `countdown-banner` element.
+Your click-through is the A tag wrapping the `countdown-banner` element. This must be edited to replace "http://google.com" from the example with your click-through URL.
 
 Your image macro should be set as the `background-image` attribute of `countdown-banner`.
 
@@ -42,6 +42,10 @@ Defaults in parenthesis.
   Horizontal alignment of the clock within the element. Values equivalent to flexbox justify-content.
 * `clock-fontsize` (55px)
   Font size of the clock digits. Labels' font size adjusts automatically to 33% of this size.
+* `clock-lineheight` (1)
+  Line height of all clock text elements.
+* `clock-font-variant-numeric` (tabular-nums)
+  Specify the font variant for numbers. The default, "tabular-nums", attempts to use a fixed-width space for numbers similar to a monospace font if such a variant exists for the font in use.
 * `clock-color` (#fff)
   Text color of the clock digits and labels.
 * `clock-separator` (":")
