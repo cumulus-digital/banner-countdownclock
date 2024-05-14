@@ -6,9 +6,9 @@ All attributes of the `countdown-banner` element are optional except for `end`. 
 
 The `end` attribute specifies the end date and time of the countdown clock and must be specified in a format readable by JavaScript's `Date.parse()` — the most compatible of which is [ISO 8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format). Check out [time.lol](https://time.lol/) for an easy conversion tool.
 
-Your click-through is the A tag wrapping the `countdown-banner` element. This must be edited to replace "http://google.com" from the example with your click-through URL.
+Your click-through is the `A` tag wrapping the `countdown-banner` element. `EXAMPLE.html` assumes this is being used as custom creative in GAM, so it includes the `%%CLICK_URL_UNESC%%` macro to track clicks. This must be edited to replace "http://google.com" after the macro with your click-through URL. If using this countdown banner outside of GAM, edit the entire href attribute to your desired click-through URL. The `A` tag is not necessary for rendering the clock, and may be omitted entirely if desired.
 
-Your image macro should be set as the `background-image` attribute of `countdown-banner`.
+Your image macro should be set as the `background-image` attribute of `countdown-banner`, or alternatively the full URL of an image file.
 
 When countdown completes, an `end-message` may be shown. Omit or leave blank to show all 0's.
 
