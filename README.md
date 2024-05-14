@@ -12,6 +12,8 @@ Your image macro should be set as the `background-image` attribute of `countdown
 
 When countdown completes, an `end-message` may be shown. Omit or leave blank to show all 0's.
 
+*Note: This custom element is not mobile responsive.*
+
 ## Attributes
 
 Defaults in parenthesis.
