@@ -1,59 +1,49 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Countdown Banner Example</title>
-	</head>
-	<body>
+<script src="https://cdn.jsdelivr.net/gh/cumulus-digital/banner-countdownclock@1.1.4/dist/banner.js" async></script>
 
-		<script src="https://cdn.jsdelivr.net/gh/cumulus-digital/banner-countdownclock@1.1.4/dist/banner.js" async></script>
+<a href="%%CLICK_URL_UNESC%%http://google.com" target="_blank">
 
-		<a href="%%CLICK_URL_UNESC%%http://google.com" target="_blank">
+	<countdown-banner
+		end="2024-10-31 00:00:00 -04:00"
 
-			<countdown-banner
-				end="2024-10-31 00:00:00 -04:00"
+		background-color="#000"
 
-				background-color="#000"
+		background-image="EXAMPLE-BackgroundImage.jpg"
 
-				background-image="EXAMPLE-BackgroundImage.jpg"
+		end-message="Countdown complete!"
 
-				end-message="Countdown complete!"
+		end-message-font-size="1em"
 
-				end-message-font-size="1em"
+		end-message-color="inherit"
 
-				end-message-color="inherit"
+		load-font="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed&display=fallback"
 
-				load-font="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed&display=fallback"
+		font-family="'Sofia Sans Extra Condensed', sans-serif"
 
-				font-family="'Sofia Sans Extra Condensed', sans-serif"
+		clock-align="center"
 
-				clock-align="center"
+		clock-justify="center"
 
-				clock-justify="center"
+		clock-fontsize="55px"
 
-				clock-fontsize="55px"
+		clock-lineheight="1"
 
-				clock-lineheight="1"
+		clock-font-variant-numeric="tabular-nums"
 
-				clock-font-variant-numeric="tabular-nums"
+		clock-color="#fff"
 
-				clock-color="#fff"
+		clock-separator=":"
 
-				clock-separator=":"
+		clock-margin=".5em 0 0"
 
-				clock-margin=".5em 0 0"
+		clock-digit-gap=".1em"
 
-				clock-digit-gap=".1em"
+		clock-show-days="true"
 
-				clock-show-days="true"
+		clock-show-seconds="true"
 
-				clock-show-seconds="true"
+		clock-show-2digits="true"
 
-				clock-show-2digits="true"
+		clock-show-labels="true"
+	></countdown-banner>
 
-				clock-show-labels="true"
-			></countdown-banner>
-
-		</a>
-
-	</body>
-</html>
+</a>
