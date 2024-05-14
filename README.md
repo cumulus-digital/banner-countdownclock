@@ -62,3 +62,9 @@ Defaults in parenthesis.
   If true, display clock parts as 2 digits. For example, 9 seconds would display as 09 seconds.
 * `clock-show-labels` (true)
   Show or hide the digit labels.
+
+## Example Screenshot
+
+Below is a screenshot of what EXAMPLE.html may produce:
+
+![Example screenshot of countdown clock](https://github.com/cumulus-digital/banner-countdownclock/blob/main/EXAMPLE.jpg?raw=true)
