@@ -1,6 +1,6 @@
 # Countdown Clock Banner
 
-See `EXAMPLE.html` for implementation. It includes a script tag loading `dist/banner.js` from jsdelivr referencing a release version of this code. To choose a different version, alter the version number after the `@` symbol in the jsdelivr URL. See [jsdelivr documentation](https://www.jsdelivr.com/documentation#id-github) for details.
+See `EXAMPLE.html` for implementation.
 
 All attributes of the `countdown-banner` element are optional except for `end`. The example includes the default value of all attributes.
 
@@ -12,7 +12,9 @@ Your image macro should be set as the `background-image` attribute of `countdown
 
 When countdown completes, an `end-message` may be shown. Omit or leave blank to show all 0's.
 
-*Note: This custom element is not mobile responsive.*
+***Note:** This custom element is not mobile responsive.*
+
+`EXAMPLE.html` includes a script tag loading `dist/banner.js` from jsdelivr referencing a release version of this code. If you need to choose a different version, alter the version number after the `@` symbol in the jsdelivr URL. See [jsdelivr documentation](https://www.jsdelivr.com/documentation#id-github) for details.
 
 ## Attributes
 
