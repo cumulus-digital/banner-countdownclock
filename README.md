@@ -68,6 +68,19 @@ Defaults in parenthesis.
   If true, display clock parts as 2 digits. For example, 9 seconds would display as 09 seconds.
 * `clock-show-labels` (true)
   Show or hide the digit labels.
+* `clock-labels-font-size` (33%)
+  Font size of clock labels.
+
+## Countdown Complete Event
+
+The countdown-banner element emits a `countdown-complete` event which can be listened for. Example:
+
+```javascript
+var clock = document.querySelector('countdown-banner');
+clock.addEventListener('countdown-complete', function(ev) {
+  console.log('Countdown complete!');
+});
+```
 
 ## Example Screenshot
 

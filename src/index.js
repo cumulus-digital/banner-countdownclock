@@ -60,6 +60,8 @@ class CountdownBanner extends HTMLElement {
 				this.getAttribute('end-message-font-size') || '1em',
 			'--end-message-color':
 				this.getAttribute('end-message-color') || 'inherit',
+			'--clock-labels-font-size':
+				this.getAttribute('clock-labels-font-size') || '33%',
 		};
 		for (let k in baseStyle) {
 			this.style.setProperty(k, baseStyle[k]);
@@ -218,6 +220,19 @@ class CountdownBanner extends HTMLElement {
 					seconds: 0,
 				});
 			}
+
+			let ev,
+				evName = 'countdown-complete',
+				evData = {
+					id: this.getAttribute('id') || null,
+				};
+			if (window.document.createEvent) {
+				ev = window.document.createEvent('CustomEvent');
+				ev.initCustomEvent(evName, true, true, evData);
+			} else {
+				ev = new CustomEvent(name, { detail: data });
+			}
+			this.dispatchEvent(ev);
 			return;
 		}
 

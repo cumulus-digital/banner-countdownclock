@@ -62,7 +62,7 @@ countdown-banner {
 				left: 50%;
 				transform: translateX(-50%);
 
-				font-size: 33%;
+				font-size: var(--clock-labels-font-size, 33%);
 				font-weight: normal;
 			}
 		}
