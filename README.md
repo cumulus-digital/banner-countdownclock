@@ -54,8 +54,10 @@ Defaults in parenthesis.
   Text color of the clock digits and labels.
 * `clock-separator` (":")
   The separator character between clock digits. Leave blank to remove the separator.
-* `clock-margin` (0.5em 0 0)
-  Adjusts the margin of the clock. Values equivalent to CSS margin shorthand.
+* `clock-margin` (0)
+  Adjusts the margin of the clock container. Values equivalent to CSS margin shorthand.
+* `clock-padding` (0)
+  Adjusts the padding of the clock container. Values equivalent to CSS padding shorthand.
 * `clock-digit-gap` (.1em)
   Adjusts the gap between clock digits and separator.
 * `clock-show-days` (true)

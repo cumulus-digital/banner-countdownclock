@@ -51,7 +51,8 @@ class CountdownBanner extends HTMLElement {
 			),
 			'--clock-align': this.getAttribute('clock-align', 'center'),
 			'--clock-justify': this.getAttribute('clock-justify', 'center'),
-			'--clock-margin': this.getAttribute('clock-margin') || '.5em 0 0',
+			'--clock-margin': this.getAttribute('clock-margin') || '0',
+			'--clock-padding': this.getAttribute('clock-padding') || '0',
 			'--clock-color': this.getAttribute('clock-color') || '#fff',
 			'--clock-digit-gap':
 				this.getAttribute('clock-digit-gap') || '0.1em',

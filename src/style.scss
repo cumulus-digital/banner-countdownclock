@@ -23,8 +23,8 @@ countdown-banner {
 	line-height: var(--clock-lineheight, 1);
 	text-align: center;
 	font-variant-numeric: var(--clock-font-variant-numeric, tabular-nums);
-	margin: var(--clock-margin, 0.5em 0 0);
-	padding: 0.5em;
+	margin: var(--clock-margin, 0);
+	padding: var(--clock-padding, 0);
 	color: var(--clock-color, rgba(255, 255, 255, 1));
 
 	.end-message {
