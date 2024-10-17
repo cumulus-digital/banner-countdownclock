@@ -206,6 +206,11 @@ class CountdownBanner extends HTMLElement {
 		if (distance < 0) {
 			clearInterval(this.clockInterval);
 			this.clockInterval = null;
+			if (this.trueFalse(this.getAttribute('end-hide'))) {
+				this.style.display = 'none';
+				return;
+			}
+
 			const endMessage = this.getAttribute('end-message') || null;
 			if (endMessage?.length) {
 				const endMessageEl = document.createElement('div');

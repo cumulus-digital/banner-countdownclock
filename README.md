@@ -30,6 +30,8 @@ Defaults in parenthesis.
   Background image of the clock.
 * `end` ()
   Date and time to count down to. Must be in a format understood by `Date.parse()` — the most compatible of which is [ISO 8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format). Check out [time.lol](https://time.lol/) for an easy conversion tool.
+* `end-hide` (false)
+  If set to "true", the banner will element will disappear when the countdown ends.
 * `end-message` ()
   A message to display once the countdown completes.
 * `end-message-font-size` (1em)
